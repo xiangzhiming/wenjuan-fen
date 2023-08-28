@@ -1,0 +1,18 @@
+.container{
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  height: calc(100vh - 64px - 65px);
+  display: flex;
+  flex-direction: column;  // 布局方式水平布局
+  justify-content: center;  //  元素居中
+  align-items: center;
+
+  .info{
+    text-align: center;
+
+    button{
+      height: 60px;
+      font-size: 24px;
+
+    }
+  }
+}

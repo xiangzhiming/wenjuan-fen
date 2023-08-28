@@ -1,0 +1,14 @@
+.container{
+  padding: 24px 0px;
+  // 下面两个属性组合是水平居中的效果
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+.left{
+  width: 120px;
+}
+.right{
+  flex: 1;
+  margin-left: 60px;
+}

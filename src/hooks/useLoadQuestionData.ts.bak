@@ -1,0 +1,31 @@
+import {useParams} from "react-router-dom";
+import {getQuestionService} from "../services/question";
+import {useRequest} from "ahooks";
+
+function useLoadQuestionData() {
+       const {id = ""} = useParams(); // useParams()可以自动解析出动态路由中传递的参数的值。前提是参数名要写成一样
+//     const [loading,setLoading] = useState(true);
+//     const [questionData, setQuestionData] = useState({});
+//
+//     useEffect(() => {
+//         async function fn() {
+//             let data = await getQuestionService(id);
+//             setLoading(false);
+//             setQuestionData(data);
+//         }
+//         fn();
+//     },[])
+//     return {loading, questionData}
+
+    async function load() {
+        const data = await getQuestionService(id);
+        return data;
+    }
+
+    const {loading,data,error} = useRequest(load);
+    return {loading, data, error}
+
+}
+
+
+export default useLoadQuestionData;

@@ -1,0 +1,25 @@
+.header{
+  display: flex;   // flex布局  一种布局方式   弹性布局
+  //border: 1px solid red;
+}
+
+.left{
+  flex: 1;  // 和使用该属性的子元素平分父元素的剩余空间
+}
+
+.right{
+  flex: 1;
+  text-align: right;   //  文本对齐方式：向右对齐
+}
+
+
+.content{
+  margin-top: 30px;   //  上边距
+  margin-bottom: 30px;  //  下边距
+  //border: 1px solid red;
+}
+
+.footer{
+  text-align: center;
+  //border: 1px solid red;
+}
