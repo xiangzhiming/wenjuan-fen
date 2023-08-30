@@ -19,7 +19,11 @@ function useLoadQuestionData() {
     useEffect(() => {
         if (!data) return;
         const {title = "", componentList = []} = data;
-        dispatch(resetComponents({componentList}));
+        let selectId = "";
+        if (componentList.length > 0) {
+            selectId = componentList[0].fe_id;
+        }
+        dispatch(resetComponents({componentList,selectId}));
     }, [data]);
 
     useEffect(() => {
