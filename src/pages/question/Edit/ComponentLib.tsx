@@ -2,16 +2,30 @@ import {FC} from "react";
 import {componentConfGroup, ComponentConfType} from "../../../components/QuestionComponents";
 import Title from "antd/es/typography/Title";
 import styles from "./ComponentLib.module.scss"
+import {useDispatch} from "react-redux";
+import {addComponent} from "../../../store/componentsReducer";
+import {nanoid} from "@reduxjs/toolkit";
 
-function genComponent(componentType: ComponentConfType) {
-    const {title,type,Component} = componentType;
-    return (<div className={styles.wrapper}>
-        <div className={styles.component}>
-            <Component/>
-        </div>
-    </div>)
-}
 const ComponentLib:FC = () => {
+    const dispatch = useDispatch();
+    function genComponent(componentType: ComponentConfType) {
+        const {title,type,Component,defaultProps} = componentType;
+        function handleClick() {
+            dispatch(addComponent(
+                {
+                    fe_id: nanoid(),
+                    type,
+                    title,
+                    props: defaultProps
+                }
+            ))
+        }
+        return (<div key={type} className={styles.wrapper} onClick={handleClick}>
+            <div className={styles.component}>
+                <Component/>
+            </div>
+        </div>)
+    }
     return(<div>
         {
             componentConfGroup.map((group,index) => {
