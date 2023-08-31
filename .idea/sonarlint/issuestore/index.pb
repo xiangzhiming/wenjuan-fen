@@ -38,8 +38,6 @@ F
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 <
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
-h
-8src/components/QuestionComponents/QuestionTitle/index.ts,a\4\a4d5ee83d5af919295f39fc6c0185ae8f1251876
 N
 src/layouts/QuestionLayout.tsx,a\b\ab72c9402ed453f29bcd419549adb57bf9e87977
 D
@@ -118,8 +116,6 @@ m
 =src/components/QuestionComponents/QuestionInput/Component.tsx,9\a\9abf4c881205a271ff809b9ecda673f3577b0f63
 m
 =src/components/QuestionComponents/QuestionTitle/Component.tsx,b\5\b50a1c6f07f76197f2dafac0e69e24029b1d84ac
-l
-<src/components/QuestionComponents/QuestionTitle/interface.ts,5\3\539b43b12b018c3b739b92694ae56a90016ac228
 Y
 )src/pages/question/Edit/index.module.scss,5\d\5d92adada92a31e56eb64e3ae8a1a3d5a33ff2ab
 H
@@ -128,3 +124,11 @@ K
 src/hooks/useGetUserInfo.ts,3\a\3abb98101a78b3b0c8e4d36bc53718cdaef20211
 T
 $src/hooks/useLoadQuestionData.ts.bak,f\6\f618f261cf6ab95a9b7cd8374865e4b724581b01
+P
+ src/hooks/useLoadQuestionData.ts,1\3\13e29ce942596ad362a285839d6a7ddb74b23212
+B
+src/store/index.ts,7\8\788f62f848ec0936ef56cb3abc11e629c69f787c
+l
+<src/components/QuestionComponents/QuestionTitle/interface.ts,5\3\539b43b12b018c3b739b92694ae56a90016ac228
+l
+<src/components/QuestionComponents/QuestionInput/interface.ts,3\d\3da0d5649ecb86a40ed2a588cee25f1ae2bccce3

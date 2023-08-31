@@ -4,16 +4,16 @@ import {produce}  from 'immer';
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export type ComponentInfoType = {
-    fe_id: string
-    type: string
-    title: string
-    props: ComponentPropsType;
+    fe_id: string  // 返回的组件id
+    type: string   // 返回的组件类型
+    title: string  // 返回的组件标题
+    props: ComponentPropsType;  // 返回的组件属性
 }
 
 export type ComponentsStateType = {
-    selectId: string;
-    componentList: ComponentInfoType[];
-}
+    selectId: string;   // 选中组件的ID
+    componentList: ComponentInfoType[];  //  后端返回的组件集合
+};
 
 const INIT_STATE: ComponentsStateType = {
     selectId: "",

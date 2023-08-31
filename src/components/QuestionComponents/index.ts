@@ -3,6 +3,7 @@ import QuestionInputConf, {QuestionInputPropsType} from "./QuestionInput";
 
 import {FC} from "react";
 import Component from "./QuestionTitle/Component";
+import {PropComponent} from "./QuestionInput/PropComponent";
 
 
 // 各个组件的 prop type
@@ -13,6 +14,7 @@ export type ComponentConfType = {
     title: string;
     type: string;
     Component: FC<ComponentPropsType>;
+    PropComponent: FC<ComponentPropsType>;
     defaultProps: ComponentPropsType;
 }
 
