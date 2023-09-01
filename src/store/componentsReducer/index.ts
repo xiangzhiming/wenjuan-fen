@@ -43,6 +43,7 @@ export const componentsSlice = createSlice({
                 draft.componentList.push(newComponent)  // 那么直接在末尾追加一个组件
             } else {
                 // 选中了组件，插入到选中组件的后面
+                // 在下标为index的元素后面添加新元素newComponent
                 draft.componentList.splice(index + 1, 0, newComponent);
             }
             // 添加组件后将选中的组件改变成新添加的组件
@@ -55,7 +56,7 @@ export const componentsSlice = createSlice({
             action: PayloadAction<{ fe_id: string, newProps: ComponentPropsType }>) => {
             const {fe_id, newProps} = action.payload;
             const curComp = draft.componentList.find(c => c.fe_id === fe_id) as ComponentInfoType;
-            console.log(newProps,"newProps");
+            console.log(newProps, "newProps");
             console.log(curComp.props);
             if (curComp) {
                 curComp.props = {
@@ -63,10 +64,20 @@ export const componentsSlice = createSlice({
                     ...newProps
                 }
             }
+        }),
+
+        // 删除选中的组件
+        removeSelectedComponent: produce((draft: ComponentsStateType) => {
+            const {selectId: removedId, componentList = []} = draft;
+            const index = componentList.findIndex(c => c.fe_id === removedId);
+            componentList.splice(index, 1);  // 删除componentList数组中下标为index的元素
         })
     }
 })
 
-export const {resetComponents, changeSelectId, addComponent,changeComponentPops} = componentsSlice.actions;
+export const {
+    resetComponents, changeSelectId, addComponent, changeComponentPops,
+    removeSelectedComponent
+} = componentsSlice.actions;
 export default componentsSlice.reducer;
 

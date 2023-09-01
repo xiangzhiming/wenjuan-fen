@@ -6,6 +6,7 @@ import {useDispatch} from "react-redux";
 import {changeSelectId} from "../../../store/componentsReducer";
 import LeftPanel from "./LeftPanel";
 import {RightPanel} from "./RightPanel";
+import {EditHeader} from "./EditHeader";
 
 const Edit:FC = () => {
     // 加载用户信息
@@ -16,7 +17,9 @@ const Edit:FC = () => {
     }
     return (
         <div className={styles.container}>
-            <div style={{backgroundColor: '#fff',height:"40px"}}>Header</div>
+            <div style={{backgroundColor: '#fff',height:"40px"}}>
+                <EditHeader/>
+            </div>
             <div className={styles["content-wrapper"]}>
                 <div className={styles.context}>
                     <div className={styles.left}>
