@@ -2,6 +2,7 @@ import {ComponentPropsType} from "../../components/QuestionComponents";
 import {userSlice} from "../userReducer";
 import {produce} from 'immer';
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {getNextSelectedId} from "./utils";
 
 export type ComponentInfoType = {
     fe_id: string  // 返回的组件id
@@ -56,8 +57,6 @@ export const componentsSlice = createSlice({
             action: PayloadAction<{ fe_id: string, newProps: ComponentPropsType }>) => {
             const {fe_id, newProps} = action.payload;
             const curComp = draft.componentList.find(c => c.fe_id === fe_id) as ComponentInfoType;
-            console.log(newProps, "newProps");
-            console.log(curComp.props);
             if (curComp) {
                 curComp.props = {
                     ...curComp.props,
@@ -68,7 +67,10 @@ export const componentsSlice = createSlice({
 
         // 删除选中的组件
         removeSelectedComponent: produce((draft: ComponentsStateType) => {
-            const {selectId: removedId, componentList = []} = draft;
+            const {selectId: removedId, componentList} = draft;
+            // 删除组件后重新计算默认的选中组件
+            const newSelectedId = getNextSelectedId(removedId, componentList);
+            draft.selectId = newSelectedId;
             const index = componentList.findIndex(c => c.fe_id === removedId);
             componentList.splice(index, 1);  // 删除componentList数组中下标为index的元素
         })

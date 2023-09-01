@@ -14,7 +14,8 @@ M
 @
 src/App.test.tsx,1\f\1fc1c06a0502bf303f8ba35e530938a98e7e35b2
 =
-src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
+
+src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
 ;
 src/App.tsx,8\3\835da56f32df714aaed6285a5b7fc3a7807851e4
 F
@@ -22,7 +23,8 @@ F
 <
 src/logo.svg,6\d\6d3a8cd532ece5b4ddbd4b3b6a678ba686d300bc
 =
-src/index.css,c\5\c5d38a62d1faae90a2acaa34b79a7ef365c917e4
+
+src/index.css,c\5\c5d38a62d1faae90a2acaa34b79a7ef365c917e4
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
 A
@@ -32,7 +34,8 @@ A
 F
 src/react-app-env.d.ts,4\a\4a7b99bdbee5792679d347b6474463bf5e14b66d
 =
-tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
+
+tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -128,7 +131,15 @@ P
  src/hooks/useLoadQuestionData.ts,1\3\13e29ce942596ad362a285839d6a7ddb74b23212
 B
 src/store/index.ts,7\8\788f62f848ec0936ef56cb3abc11e629c69f787c
-l
-<src/components/QuestionComponents/QuestionTitle/interface.ts,5\3\539b43b12b018c3b739b92694ae56a90016ac228
-l
-<src/components/QuestionComponents/QuestionInput/interface.ts,3\d\3da0d5649ecb86a40ed2a588cee25f1ae2bccce3
+`
+0src/pages/question/Edit/ComponentLib.module.scss,b\4\b4062f01f0418a7249ac61b93193237e2b683894
+^
+.src/pages/question/Edit/EditCanvas.module.scss,c\f\cf5cb4f1a1be1130d776cc67344f34b1ade22c7a
+U
+%src/pages/question/Edit/LeftPanel.tsx,7\2\72c70a86d63802d49041f6c12cfc7ac8c3a33cee
+P
+ src/hooks/useGetComponentInfo.ts,b\5\b5efc5202b31300ea8b039995ddb5a8d9c17210e
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+m
+=src/components/QuestionComponents/QuestionInput/Component.tsx,9\a\9abf4c881205a271ff809b9ecda673f3577b0f63
