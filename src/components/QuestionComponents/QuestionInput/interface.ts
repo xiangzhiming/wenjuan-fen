@@ -1,6 +1,8 @@
 export type QuestionInputPropsType = {
     title?: string
     placeholder?: string
+
+    onABC?: (newProps: QuestionInputPropsType) => void
 }
 
 
