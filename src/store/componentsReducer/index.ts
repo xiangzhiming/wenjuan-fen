@@ -8,6 +8,7 @@ export type ComponentInfoType = {
     fe_id: string  // 返回的组件id
     type: string   // 返回的组件类型
     title: string  // 返回的组件标题
+    isHidden?: boolean // 返回的组件是否隐藏的属性
     props: ComponentPropsType;  // 返回的组件属性
 }
 
@@ -73,13 +74,39 @@ export const componentsSlice = createSlice({
             draft.selectId = newSelectedId;
             const index = componentList.findIndex(c => c.fe_id === removedId);
             componentList.splice(index, 1);  // 删除componentList数组中下标为index的元素
+        }),
+
+        // 隐藏/显示  组件
+        changeComponentHidden: produce(
+            (
+            draft: ComponentsStateType,
+            action: PayloadAction<{ fe_id: string, isHidden: boolean }>
+            ) => {
+                const {componentList} = draft;
+                const {fe_id,isHidden} = action.payload;
+
+                let newSelectedId = "";
+                if (isHidden) {
+                    // 要隐藏
+                    newSelectedId = getNextSelectedId(fe_id, componentList);
+                }else{
+                    // 要显示
+                    newSelectedId = fe_id
+                }
+                // 隐藏后重新计算默认的选中组件
+                draft.selectId = newSelectedId;
+
+                const curComp = componentList.find(c => c.fe_id === fe_id);
+                if (curComp) {
+                    curComp.isHidden = isHidden;
+                }
         })
     }
 })
 
 export const {
     resetComponents, changeSelectId, addComponent, changeComponentPops,
-    removeSelectedComponent
+    removeSelectedComponent,changeComponentHidden
 } = componentsSlice.actions;
 export default componentsSlice.reducer;
 

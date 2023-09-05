@@ -14,8 +14,7 @@ M
 @
 src/App.test.tsx,1\f\1fc1c06a0502bf303f8ba35e530938a98e7e35b2
 =
-
-src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
+src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
 ;
 src/App.tsx,8\3\835da56f32df714aaed6285a5b7fc3a7807851e4
 F
@@ -23,8 +22,7 @@ F
 <
 src/logo.svg,6\d\6d3a8cd532ece5b4ddbd4b3b6a678ba686d300bc
 =
-
-src/index.css,c\5\c5d38a62d1faae90a2acaa34b79a7ef365c917e4
+src/index.css,c\5\c5d38a62d1faae90a2acaa34b79a7ef365c917e4
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
 A
@@ -34,8 +32,7 @@ A
 F
 src/react-app-env.d.ts,4\a\4a7b99bdbee5792679d347b6474463bf5e14b66d
 =
-
-tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
+tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -115,22 +112,14 @@ J
 src/pages/Home.module.scss,5\c\5c8552bcdc5f647aebff4228500a974f2d243d42
 D
 public/manifest.json,4\2\42e89cd2213b9d5dfae4f63522702c623170d792
-m
-=src/components/QuestionComponents/QuestionInput/Component.tsx,9\a\9abf4c881205a271ff809b9ecda673f3577b0f63
-m
-=src/components/QuestionComponents/QuestionTitle/Component.tsx,b\5\b50a1c6f07f76197f2dafac0e69e24029b1d84ac
 Y
 )src/pages/question/Edit/index.module.scss,5\d\5d92adada92a31e56eb64e3ae8a1a3d5a33ff2ab
-H
-src/store/userReducer.ts,1\0\10424d9068b652d5b6fb7715143a1dc406d920d8
 K
 src/hooks/useGetUserInfo.ts,3\a\3abb98101a78b3b0c8e4d36bc53718cdaef20211
 T
 $src/hooks/useLoadQuestionData.ts.bak,f\6\f618f261cf6ab95a9b7cd8374865e4b724581b01
 P
  src/hooks/useLoadQuestionData.ts,1\3\13e29ce942596ad362a285839d6a7ddb74b23212
-B
-src/store/index.ts,7\8\788f62f848ec0936ef56cb3abc11e629c69f787c
 `
 0src/pages/question/Edit/ComponentLib.module.scss,b\4\b4062f01f0418a7249ac61b93193237e2b683894
 ^
@@ -139,7 +128,35 @@ U
 %src/pages/question/Edit/LeftPanel.tsx,7\2\72c70a86d63802d49041f6c12cfc7ac8c3a33cee
 P
  src/hooks/useGetComponentInfo.ts,b\5\b5efc5202b31300ea8b039995ddb5a8d9c17210e
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 m
 =src/components/QuestionComponents/QuestionInput/Component.tsx,9\a\9abf4c881205a271ff809b9ecda673f3577b0f63
+m
+=src/components/QuestionComponents/QuestionTitle/Component.tsx,b\5\b50a1c6f07f76197f2dafac0e69e24029b1d84ac
+V
+&src/pages/question/Edit/RightPanel.tsx,c\8\c85be199834ab6870c292e2784dcb1aa4c6df78a
+h
+8src/components/QuestionComponents/QuestionInput/index.ts,3\8\386c3e49d8c8f5ad8e86d5432ace83aa4aea2325
+l
+<src/components/QuestionComponents/QuestionInput/interface.ts,3\d\3da0d5649ecb86a40ed2a588cee25f1ae2bccce3
+q
+Asrc/components/QuestionComponents/QuestionTitle/PropComponent.tsx,6\b\6b404cf86f3403f13625e8511e0f1c71ca9cf83e
+q
+Asrc/components/QuestionComponents/QuestionInput/PropComponent.tsx,e\4\e4919d9d0ddf0607f4ff8452554bbc0a503829aa
+Y
+)src/pages/question/Edit/ComponentProp.tsx,5\e\5e57a9644387925b7e1a384ee8c543c72f3b209b
+Q
+!src/pages/question/Edit/index.tsx,2\b\2b8e81d65512c2372571020918f5bde96909a197
+^
+.src/pages/question/Edit/EditHeader.module.scss,b\3\b30a09d97a8ac11474b75304ca55a41e2e81cf04
+B
+src/store/index.ts,7\8\788f62f848ec0936ef56cb3abc11e629c69f787c
+H
+src/store/userReducer.ts,1\0\10424d9068b652d5b6fb7715143a1dc406d920d8
+Z
+*src/components/QuestionComponents/index.ts,4\d\4d93104c412b0b27f8e5b43f01dc1277ef414552
+h
+8src/components/QuestionComponents/QuestionTitle/index.ts,a\4\a4d5ee83d5af919295f39fc6c0185ae8f1251876
+l
+<src/components/QuestionComponents/QuestionTitle/interface.ts,5\3\539b43b12b018c3b739b92694ae56a90016ac228
+V
+&src/pages/question/Edit/EditHeader.tsx,e\e\ee290b651147f93084d73c13266ac86e095cc2a1

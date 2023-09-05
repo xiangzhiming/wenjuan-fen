@@ -1,6 +1,8 @@
 import {ComponentInfoType} from "./index";
 
 export function getNextSelectedId(fe_id: string, componentList: ComponentInfoType[]) {
+    // const visibleComponentList = componentList.filter(c => !c.isHidden)
+    componentList = componentList.filter(c => !c.isHidden)
     const index = componentList.findIndex(c => c.fe_id === fe_id);
     // 如果index小于1，说明没有选中组件，则返回空
     if (index < 0) return "";
