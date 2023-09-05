@@ -1,4 +1,4 @@
-import {ComponentInfoType} from "./index";
+import {ComponentInfoType, ComponentsStateType} from "./index";
 
 export function getNextSelectedId(fe_id: string, componentList: ComponentInfoType[]) {
     // const visibleComponentList = componentList.filter(c => !c.isHidden)
@@ -19,4 +19,23 @@ export function getNextSelectedId(fe_id: string, componentList: ComponentInfoTyp
         }
     }
     return newSelectedId;
+}
+
+/**
+ * 插入新组件
+ * @param draft  state draft
+ * @param newComponent  新组件
+ */
+export function insertNewComponent(draft: ComponentsStateType, newComponent: ComponentInfoType) {
+    const {selectId, componentList} = draft;
+    const index = componentList.findIndex(c => c.fe_id === selectId);
+    if (index < 0) {  // 说明现在画布中没有有被选中的组件
+        draft.componentList.push(newComponent)  // 那么直接在末尾追加一个组件
+    } else {
+        // 选中了组件，插入到选中组件的后面
+        // 在下标为index的元素后面添加新元素newComponent
+        draft.componentList.splice(index + 1, 0, newComponent);
+    }
+    // 添加组件后将选中的组件改变成新添加的组件
+    draft.selectId = newComponent.fe_id;
 }

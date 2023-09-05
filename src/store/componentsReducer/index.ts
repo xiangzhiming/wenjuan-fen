@@ -1,8 +1,7 @@
 import {ComponentPropsType} from "../../components/QuestionComponents";
-import {userSlice} from "../userReducer";
 import {produce} from 'immer';
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {getNextSelectedId} from "./utils";
+import {createSlice, nanoid, PayloadAction} from "@reduxjs/toolkit";
+import {getNextSelectedId, insertNewComponent} from "./utils";
 import cloneDeep from "lodash.clonedeep";
 
 export type ComponentInfoType = {
@@ -43,17 +42,7 @@ export const componentsSlice = createSlice({
         // 添加新组件
         addComponent: produce((draft: ComponentsStateType, action: PayloadAction<ComponentInfoType>) => {
             const newComponent = action.payload;
-            const {selectId, componentList} = draft;
-            const index = componentList.findIndex(c => c.fe_id === selectId);
-            if (index < 0) {  // 说明现在画布中没有有被选中的组件
-                draft.componentList.push(newComponent)  // 那么直接在末尾追加一个组件
-            } else {
-                // 选中了组件，插入到选中组件的后面
-                // 在下标为index的元素后面添加新元素newComponent
-                draft.componentList.splice(index + 1, 0, newComponent);
-            }
-            // 添加组件后将选中的组件改变成新添加的组件
-            draft.selectId = newComponent.fe_id;
+            insertNewComponent(draft, newComponent);
         }),
 
         // 修改组件属性
@@ -74,10 +63,8 @@ export const componentsSlice = createSlice({
         removeSelectedComponent: produce((draft: ComponentsStateType) => {
             const {selectId: removedId, componentList} = draft;
             // 删除组件后重新计算默认的选中组件
-            const newSelectedId = getNextSelectedId(removedId, componentList);
-            draft.selectId = newSelectedId;
-            const index = componentList.findIndex(c => c.fe_id === removedId);
-            componentList.splice(index, 1);  // 删除componentList数组中下标为index的元素
+            draft.selectId =  getNextSelectedId(removedId, componentList);
+            componentList.splice(componentList.findIndex(c => c.fe_id === removedId), 1);  // 删除componentList数组中下标为index的元素
         }),
 
         // 隐藏/显示  组件
@@ -89,7 +76,7 @@ export const componentsSlice = createSlice({
                 const {componentList} = draft;
                 const {fe_id,isHidden} = action.payload;
 
-                let newSelectedId = "";
+                let newSelectedId;
                 if (isHidden) {
                     // 要隐藏
                     newSelectedId = getNextSelectedId(fe_id, componentList);
@@ -123,7 +110,18 @@ export const componentsSlice = createSlice({
                 if (selectedComponent === null) return;
                 draft.copiedComponent = cloneDeep(selectedComponent);
             }
-        )
+        ),
+
+        // 粘贴组件
+        pasteCopiedComponent: produce((draft:ComponentsStateType) => {
+            const {copiedComponent} = draft;
+            if (copiedComponent == null) return;
+
+            // 要把fe_id给修改了
+            copiedComponent.fe_id = nanoid();
+            // 插入 copiedComponent
+            insertNewComponent(draft, copiedComponent);
+        })
     }
 
 
@@ -131,7 +129,7 @@ export const componentsSlice = createSlice({
 
 export const {
     resetComponents, changeSelectId, addComponent, changeComponentPops,copySelectedComponent,
-    removeSelectedComponent,changeComponentHidden,toggleComponentLocked
+    removeSelectedComponent,changeComponentHidden,toggleComponentLocked,pasteCopiedComponent
 } = componentsSlice.actions;
 export default componentsSlice.reducer;
 
