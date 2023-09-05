@@ -27,8 +27,6 @@ F
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
 A
 src/setupTests.ts,3\9\39129446b425a1d640160c068e4194e96639eedf
-A
-package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 F
 src/react-app-env.d.ts,4\a\4a7b99bdbee5792679d347b6474463bf5e14b66d
 =
@@ -36,8 +34,6 @@ F
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 N
 src/layouts/QuestionLayout.tsx,a\b\ab72c9402ed453f29bcd419549adb57bf9e87977
 D
@@ -118,8 +114,6 @@ K
 src/hooks/useGetUserInfo.ts,3\a\3abb98101a78b3b0c8e4d36bc53718cdaef20211
 T
 $src/hooks/useLoadQuestionData.ts.bak,f\6\f618f261cf6ab95a9b7cd8374865e4b724581b01
-P
- src/hooks/useLoadQuestionData.ts,1\3\13e29ce942596ad362a285839d6a7ddb74b23212
 `
 0src/pages/question/Edit/ComponentLib.module.scss,b\4\b4062f01f0418a7249ac61b93193237e2b683894
 U

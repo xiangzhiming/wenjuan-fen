@@ -3,6 +3,7 @@ import {userSlice} from "../userReducer";
 import {produce} from 'immer';
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {getNextSelectedId} from "./utils";
+import cloneDeep from "lodash.clonedeep";
 
 export type ComponentInfoType = {
     fe_id: string  // 返回的组件id
@@ -16,11 +17,13 @@ export type ComponentInfoType = {
 export type ComponentsStateType = {
     selectId: string;   // 选中组件的ID
     componentList: ComponentInfoType[];  //  后端返回的组件集合
+    copiedComponent: ComponentInfoType | null
 };
 
 const INIT_STATE: ComponentsStateType = {
     selectId: "",
-    componentList: []
+    componentList: [],
+    copiedComponent: null
 }
 
 export const componentsSlice = createSlice({
@@ -110,14 +113,24 @@ export const componentsSlice = createSlice({
             if (curComp) {
                 curComp.isLocked = !curComp.isLocked;
             }
-        })
+        }),
+
+        // 拷贝当前选中的组件
+        copySelectedComponent: produce(
+            (draft:ComponentsStateType) => {
+                const {selectId,componentList = []} = draft;
+                const selectedComponent = componentList.find(c => c.fe_id === selectId) || null;
+                if (selectedComponent === null) return;
+                draft.copiedComponent = cloneDeep(selectedComponent);
+            }
+        )
     }
 
 
 })
 
 export const {
-    resetComponents, changeSelectId, addComponent, changeComponentPops,
+    resetComponents, changeSelectId, addComponent, changeComponentPops,copySelectedComponent,
     removeSelectedComponent,changeComponentHidden,toggleComponentLocked
 } = componentsSlice.actions;
 export default componentsSlice.reducer;

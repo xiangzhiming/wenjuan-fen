@@ -23,7 +23,7 @@ function useLoadQuestionData() {
         if (componentList.length > 0) {
             selectId = componentList[0].fe_id;
         }
-        dispatch(resetComponents({componentList,selectId}));
+        dispatch(resetComponents({componentList,selectId,copiedComponent:null}));
     }, [data]);
 
     useEffect(() => {
