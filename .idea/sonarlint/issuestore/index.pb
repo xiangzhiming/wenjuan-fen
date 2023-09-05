@@ -122,12 +122,8 @@ P
  src/hooks/useLoadQuestionData.ts,1\3\13e29ce942596ad362a285839d6a7ddb74b23212
 `
 0src/pages/question/Edit/ComponentLib.module.scss,b\4\b4062f01f0418a7249ac61b93193237e2b683894
-^
-.src/pages/question/Edit/EditCanvas.module.scss,c\f\cf5cb4f1a1be1130d776cc67344f34b1ade22c7a
 U
 %src/pages/question/Edit/LeftPanel.tsx,7\2\72c70a86d63802d49041f6c12cfc7ac8c3a33cee
-P
- src/hooks/useGetComponentInfo.ts,b\5\b5efc5202b31300ea8b039995ddb5a8d9c17210e
 m
 =src/components/QuestionComponents/QuestionInput/Component.tsx,9\a\9abf4c881205a271ff809b9ecda673f3577b0f63
 m

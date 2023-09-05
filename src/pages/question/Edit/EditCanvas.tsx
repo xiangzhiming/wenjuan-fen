@@ -41,12 +41,14 @@ const EditCanvas: FC<propsType> = ({loading}) => {
             {componentList
                 .filter(c => !c.isHidden)
                 .map(item => {
-                const {fe_id} = item;
+                const {fe_id,isLocked} = item;
                 const wrapperDefaultClassName = styles["component-wrapper"];
                 const selectedClassName = styles.selected;
+                const lockedClassName = styles.locked;
                 const wrapperClassName = classnames({
                     [wrapperDefaultClassName]: true,
-                    [selectedClassName]: fe_id === selectId
+                    [selectedClassName]: fe_id === selectId,
+                    [lockedClassName]: isLocked
                 })
                 return (<div key={fe_id} className={wrapperClassName}
                              onClick={(event) => handleClick(event,fe_id)}>
