@@ -7,6 +7,7 @@ import useGetComponentInfo from "../../../hooks/useGetComponentInfo";
 import {changeSelectId, ComponentInfoType} from "../../../store/componentsReducer";
 import {getComponetConfByType} from "../../../components/QuestionComponents";
 import {useDispatch} from "react-redux";
+import useBindCanvasKeyPress from "../../../hooks/useBindCanvasKeyPress";
 
 export type propsType = {
     loading: boolean;
@@ -23,6 +24,7 @@ function genComponent(item: ComponentInfoType) {
 const EditCanvas: FC<propsType> = ({loading}) => {
     const {componentList, selectId} = useGetComponentInfo();
     const dispatch = useDispatch();
+    useBindCanvasKeyPress();
     if (loading) {
         return (
             <div style={{textAlign: "center", marginTop: "24px"}}>
@@ -32,7 +34,7 @@ const EditCanvas: FC<propsType> = ({loading}) => {
     }
 
     function handleClick(event:MouseEvent,id: string) {
-        event.stopPropagation();   // 阻止时间冒泡
+        event.stopPropagation();   // 阻止事件冒泡
         dispatch(changeSelectId(id));
     }
 

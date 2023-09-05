@@ -39,6 +39,8 @@ export const EditToolbar: FC = () => {
         dispatch(pasteCopiedComponent());
     }
 
+    // TODO: 撤销/重做  上移/下移
+
     return (<Space>
         <Tooltip title={"删除"}>
             <Button shape={"circle"} icon={<DeleteOutlined/>} onClick={handleDelete}/>

@@ -121,15 +121,34 @@ export const componentsSlice = createSlice({
             copiedComponent.fe_id = nanoid();
             // 插入 copiedComponent
             insertNewComponent(draft, copiedComponent);
+        }),
+
+        // 选中上一个
+        selectPrevComponent: produce((draft:ComponentsStateType) => {
+            const {selectId,componentList} = draft;
+            const selectedIndex = componentList.findIndex(c => c.fe_id === selectId);
+            if (selectedIndex < 0 ) return;  // 未选中组件
+            if (selectedIndex <= 0) return; // 已经选中第一个，无法在向上选中
+            draft.selectId = componentList[selectedIndex - 1].fe_id
+        }),
+
+        // 选中下一个
+        selectNextComponent: produce((draft: ComponentsStateType) => {
+            const {selectId,componentList} = draft;
+            const selectedIndex = componentList.findIndex(c => c.fe_id === selectId);
+            if (selectedIndex < 0 ) return;  // 未选中组件
+            if ((selectedIndex + 1)  === componentList.length) return; // 已经选中最后一个，无法在向下选中
+            draft.selectId = componentList[selectedIndex + 1].fe_id
         })
+
     }
 
 
 })
 
 export const {
-    resetComponents, changeSelectId, addComponent, changeComponentPops,copySelectedComponent,
-    removeSelectedComponent,changeComponentHidden,toggleComponentLocked,pasteCopiedComponent
+    resetComponents, changeSelectId, addComponent, changeComponentPops,copySelectedComponent,selectNextComponent,
+    removeSelectedComponent,changeComponentHidden,toggleComponentLocked,pasteCopiedComponent,selectPrevComponent
 } = componentsSlice.actions;
 export default componentsSlice.reducer;
 
