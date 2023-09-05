@@ -128,18 +128,8 @@ m
 =src/components/QuestionComponents/QuestionInput/Component.tsx,9\a\9abf4c881205a271ff809b9ecda673f3577b0f63
 m
 =src/components/QuestionComponents/QuestionTitle/Component.tsx,b\5\b50a1c6f07f76197f2dafac0e69e24029b1d84ac
-V
-&src/pages/question/Edit/RightPanel.tsx,c\8\c85be199834ab6870c292e2784dcb1aa4c6df78a
 h
 8src/components/QuestionComponents/QuestionInput/index.ts,3\8\386c3e49d8c8f5ad8e86d5432ace83aa4aea2325
-l
-<src/components/QuestionComponents/QuestionInput/interface.ts,3\d\3da0d5649ecb86a40ed2a588cee25f1ae2bccce3
-q
-Asrc/components/QuestionComponents/QuestionTitle/PropComponent.tsx,6\b\6b404cf86f3403f13625e8511e0f1c71ca9cf83e
-q
-Asrc/components/QuestionComponents/QuestionInput/PropComponent.tsx,e\4\e4919d9d0ddf0607f4ff8452554bbc0a503829aa
-Y
-)src/pages/question/Edit/ComponentProp.tsx,5\e\5e57a9644387925b7e1a384ee8c543c72f3b209b
 Q
 !src/pages/question/Edit/index.tsx,2\b\2b8e81d65512c2372571020918f5bde96909a197
 ^
@@ -152,7 +142,5 @@ Z
 *src/components/QuestionComponents/index.ts,4\d\4d93104c412b0b27f8e5b43f01dc1277ef414552
 h
 8src/components/QuestionComponents/QuestionTitle/index.ts,a\4\a4d5ee83d5af919295f39fc6c0185ae8f1251876
-l
-<src/components/QuestionComponents/QuestionTitle/interface.ts,5\3\539b43b12b018c3b739b92694ae56a90016ac228
 V
 &src/pages/question/Edit/EditHeader.tsx,e\e\ee290b651147f93084d73c13266ac86e095cc2a1

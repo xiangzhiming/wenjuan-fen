@@ -14,7 +14,7 @@ export const ComponentProp:FC = () => {
     const dispatch = useDispatch();
     const {selectedComponent} = useGetComponentInfo()
     if (selectedComponent == null) return<NoProp/>
-    const {type,props} = selectedComponent;
+    const {type,props,isLocked,isHidden} = selectedComponent;
     const componentConf = getComponetConfByType(type);
     if (componentConf == null) return<NoProp/>
     const {PropComponent} = componentConf;
@@ -26,6 +26,6 @@ export const ComponentProp:FC = () => {
     }
 
     return (<div>
-        <PropComponent {...props} onABC={changeProps}/>
+        <PropComponent {...props} onABC={changeProps} disabled={isLocked || isHidden}/>
     </div>);
 }

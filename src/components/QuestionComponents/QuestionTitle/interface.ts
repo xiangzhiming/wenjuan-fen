@@ -5,6 +5,7 @@ export type QuestionTitlePropsType = {
 
     // onChange
     onABC?: (newProps: QuestionTitlePropsType) => void
+    disabled?: boolean
 
 }
 

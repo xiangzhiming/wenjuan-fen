@@ -5,7 +5,7 @@ import FormItem from "antd/es/form/FormItem";
 
 export const PropComponent: FC<QuestionTitlePropsType> = (props: QuestionTitlePropsType) => {
     const [form] = Form.useForm();
-    const {text, level, isCenter,onABC} = props;
+    const {text, level, isCenter,onABC,disabled} = props;
     useEffect(() => {
         form.setFieldsValue({text, level, isCenter});
     },[text,level,isCenter]);
@@ -17,7 +17,8 @@ export const PropComponent: FC<QuestionTitlePropsType> = (props: QuestionTitlePr
     }
 
     return (
-        <Form onValuesChange={handleValueChange} form={form} layout={"vertical"} initialValues={{text,level,isCenter}}>
+        <Form onValuesChange={handleValueChange} form={form} layout={"vertical"} initialValues={{text,level,isCenter}}
+              disabled={disabled}>
             <FormItem label={"标题内容"} name= {"text"} rules={[{required: true, message: "请输入标题内容"}]}>
                 <Input/>
             </FormItem>
