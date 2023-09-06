@@ -5,14 +5,14 @@ import FormItem from "antd/es/form/FormItem";
 
 export const PropComponent: FC<QuestionTitlePropsType> = (props: QuestionTitlePropsType) => {
     const [form] = Form.useForm();
-    const {text, level, isCenter,onABC,disabled} = props;
+    const {text, level, isCenter,onChange,disabled} = props;
     useEffect(() => {
         form.setFieldsValue({text, level, isCenter});
     },[text,level,isCenter]);
 
     function handleValueChange() {
-        if (onABC) {
-            onABC(form.getFieldsValue())
+        if (onChange) {
+            onChange(form.getFieldsValue())
         }
     }
 

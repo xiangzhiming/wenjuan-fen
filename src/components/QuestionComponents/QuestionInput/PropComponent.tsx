@@ -4,15 +4,15 @@ import {Form, Input} from "antd";
 
 export const PropComponent:FC<QuestionInputPropsType> = (props:QuestionInputPropsType) => {
     const [form] = Form.useForm();
-    const {title,placeholder,onABC,disabled} = props;
+    const {title,placeholder,onChange,disabled} = props;
 
     useEffect(() => {
         form.setFieldsValue({title,placeholder});
     },[title,placeholder]);
 
     function handleValueChange() {
-        if (onABC) {
-            onABC(form.getFieldsValue());
+        if (onChange) {
+            onChange(form.getFieldsValue());
         }
     }
 

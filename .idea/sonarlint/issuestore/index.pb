@@ -13,10 +13,6 @@ M
 src/components/ListSearch.tsx,2\6\2626fef3946c37ca7b3e3e8fb2a62c854638fd08
 @
 src/App.test.tsx,1\f\1fc1c06a0502bf303f8ba35e530938a98e7e35b2
-=
-src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
-;
-src/App.tsx,8\3\835da56f32df714aaed6285a5b7fc3a7807851e4
 F
 src/reportWebVitals.ts,d\9\d938938695d447dadda115e28781c6541f53fc4f
 <
@@ -36,8 +32,6 @@ F
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 N
 src/layouts/QuestionLayout.tsx,a\b\ab72c9402ed453f29bcd419549adb57bf9e87977
-D
-src/router/index.tsx,f\8\f8bf038d651cb05552022064d274183719c66f0e
 L
 src/layouts/ManageLayout.tsx,2\1\21d27af69110e6ae4bdacecf7fe8447231e5c8c3
 T
@@ -122,19 +116,25 @@ m
 =src/components/QuestionComponents/QuestionInput/Component.tsx,9\a\9abf4c881205a271ff809b9ecda673f3577b0f63
 m
 =src/components/QuestionComponents/QuestionTitle/Component.tsx,b\5\b50a1c6f07f76197f2dafac0e69e24029b1d84ac
-h
-8src/components/QuestionComponents/QuestionInput/index.ts,3\8\386c3e49d8c8f5ad8e86d5432ace83aa4aea2325
-Q
-!src/pages/question/Edit/index.tsx,2\b\2b8e81d65512c2372571020918f5bde96909a197
 ^
 .src/pages/question/Edit/EditHeader.module.scss,b\3\b30a09d97a8ac11474b75304ca55a41e2e81cf04
 B
 src/store/index.ts,7\8\788f62f848ec0936ef56cb3abc11e629c69f787c
 H
 src/store/userReducer.ts,1\0\10424d9068b652d5b6fb7715143a1dc406d920d8
-Z
-*src/components/QuestionComponents/index.ts,4\d\4d93104c412b0b27f8e5b43f01dc1277ef414552
-h
-8src/components/QuestionComponents/QuestionTitle/index.ts,a\4\a4d5ee83d5af919295f39fc6c0185ae8f1251876
 V
 &src/pages/question/Edit/EditHeader.tsx,e\e\ee290b651147f93084d73c13266ac86e095cc2a1
+X
+(src/pages/question/Edit/ComponentLib.tsx,8\f\8f554329f8315842bd0c771af72c527ef9b0cf37
+^
+.src/pages/question/Edit/EditCanvas.module.scss,c\f\cf5cb4f1a1be1130d776cc67344f34b1ade22c7a
+A
+package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+P
+ src/hooks/useGetComponentInfo.ts,b\5\b5efc5202b31300ea8b039995ddb5a8d9c17210e
+T
+$src/store/componentsReducer/utils.ts,3\5\353d019f764f6c746dbfa7d24f6c318bd1d1ccf0
+P
+ src/hooks/useLoadQuestionData.ts,1\3\13e29ce942596ad362a285839d6a7ddb74b23212

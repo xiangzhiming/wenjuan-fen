@@ -26,6 +26,6 @@ export const ComponentProp:FC = () => {
     }
 
     return (<div>
-        <PropComponent {...props} onABC={changeProps} disabled={isLocked || isHidden}/>
+        <PropComponent {...props} onChange={changeProps} disabled={isLocked || isHidden}/>
     </div>);
 }
