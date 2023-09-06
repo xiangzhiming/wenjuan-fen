@@ -6,20 +6,13 @@ import Checkbox from "antd/es/checkbox/Checkbox";
 
 export const PropComponent: FC<QuestionParagraphPropsType> = (props: QuestionParagraphPropsType) => {
     const [form] = Form.useForm();
-    const {text, isCenter, disabled, onChange} = props;
-    console.log(text,"text");
-    console.log(isCenter,"isCenter");
-    console.log(disabled,"disabled");
-    console.log(onChange,"onChange");
-
+    const {text = "", isCenter, disabled, onChange} = props;
     useEffect(() => {
         form.setFieldsValue({text,isCenter})
     },[text,isCenter])
 
     function handleValuesChange() {
-        console.log(form.getFieldsValue(),"form.getFieldsValue()");
         if (onChange) {
-
             onChange(form.getFieldsValue());
         }
     }
