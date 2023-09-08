@@ -2,6 +2,11 @@ import {FC} from "react";
 import {QuestionTitleDefaultProps, QuestionTitlePropsType} from "./interface";
 import Title from "antd/es/typography/Title";
 
+/**
+ * 标题组件
+ * @param props
+ * @constructor
+ */
 const Component: FC<QuestionTitlePropsType> = (props: QuestionTitlePropsType) => {
     const {text = "", level = 1, isCenter = false} = {...QuestionTitleDefaultProps, ...props};
     const genFontSize = (level: number) => {

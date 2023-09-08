@@ -2,7 +2,11 @@ import {FC} from "react";
 import {QuestionParagraphDefaultProps, QuestionParagraphPropsType} from "./interface";
 import Paragraph from "antd/es/typography/Paragraph";
 
-// 段落组件
+/**
+ * 段落组件
+ * @param props  组件属性
+ * @constructor
+ */
 export const Component: FC = (props: QuestionParagraphPropsType) => {
     const {text = "", isCenter = false} = {...QuestionParagraphDefaultProps, ...props}
     const textArray = text.split('\n');  //  将段落内容根据换行符拆分成数组
