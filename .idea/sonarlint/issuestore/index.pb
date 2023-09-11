@@ -41,8 +41,6 @@ G
 L
 src/hooks/useLoadUserDate.ts,1\f\1f5ce863380d8f760b3f33aebae6442ad3835dbe
 K
-src/components/ListPage.tsx,3\b\3b3a38160a5aa007bcfaa9ea8799a5b19a38b4d1
-K
 src/components/UserInfo.tsx,9\f\9fe4acb84b94c06b9345257b044aaba88aed7c8e
 G
 src/components/Logo.tsx,0\7\07cb177d9eafdeaf782d611778dbd4f1d42f3734
@@ -146,19 +144,13 @@ V
 &src/pages/question/Edit/RightPanel.tsx,c\8\c85be199834ab6870c292e2784dcb1aa4c6df78a
 W
 'src/pages/question/Edit/EditToolbar.tsx,a\f\af4c294bd83d5c66674db9a259d056296d11fc0d
-V
-&src/pages/question/Edit/EditCanvas.tsx,9\a\9a3212143cc8ffa541b3e9e3b8fcd18de5ca9195
 Q
 !src/pages/question/Edit/index.tsx,2\b\2b8e81d65512c2372571020918f5bde96909a197
 l
 <src/components/QuestionComponents/QuestionTitle/interface.ts,5\3\539b43b12b018c3b739b92694ae56a90016ac228
 h
 8src/components/QuestionComponents/QuestionTitle/index.ts,a\4\a4d5ee83d5af919295f39fc6c0185ae8f1251876
-l
-<src/components/QuestionComponents/QuestionInput/interface.ts,3\d\3da0d5649ecb86a40ed2a588cee25f1ae2bccce3
 q
 Asrc/components/QuestionComponents/QuestionTitle/PropComponent.tsx,6\b\6b404cf86f3403f13625e8511e0f1c71ca9cf83e
-q
-Asrc/components/QuestionComponents/QuestionInput/PropComponent.tsx,e\4\e4919d9d0ddf0607f4ff8452554bbc0a503829aa
 Y
 )src/pages/question/Edit/ComponentProp.tsx,5\e\5e57a9644387925b7e1a384ee8c543c72f3b209b
