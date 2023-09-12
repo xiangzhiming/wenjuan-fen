@@ -1,6 +1,4 @@
 
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 B
 src/pages/Home.tsx,f\e\fee995f2e145c3f9ceb6f7fd48d1f22b3c792a95
 K
@@ -27,9 +25,6 @@ F
 src/react-app-env.d.ts,4\a\4a7b99bdbee5792679d347b6474463bf5e14b66d
 =
 tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 N
 src/layouts/QuestionLayout.tsx,a\b\ab72c9402ed453f29bcd419549adb57bf9e87977
 L
@@ -52,20 +47,14 @@ R
 "src/layouts/MainLayout.module.scss,d\e\de8b824f5b2d9e298c1d7df317108fecc4a17c1e
 B
 src/_mock/index.ts,8\6\86f2f557e37863ddac0c0aea9ecefd34041ba22e
-D
-src/services/user.ts,d\2\d2c693d55917cd051972e71eb05d22cd01da7ba3
 J
 src/layouts/MainLayout.tsx,3\7\378fedf3621981d8ad79e9d4c4c00b90dd335c41
 E
 src/layouts/README.md,d\8\d8f24e6b86e0a1eb72fb84b88879e3b00163ca80
-H
-src/services/question.ts,b\a\bad006f07b0952189ed87e1f3567ca990d459d51
 Q
 !src/pages/question/Stat/index.tsx,8\5\85b0e3466cc7178dac71ca15ed967c81a198d936
 Q
 !src/pages/question/Stat/README.md,f\f\ff941fd3d3d5d5d1bebae790101d742d54af8904
-D
-src/services/ajax.ts,1\b\1be89e79a1f94aab37f14f52d7d634313707c708
 Q
 !src/pages/question/Edit/README.md,2\e\2ef5bd1041fb107adb8e79d6aa5b1fe95753503f
 W
@@ -82,8 +71,6 @@ O
 src/components/QuestionCard.tsx,5\6\56804118ca9e89ca08820bbd35c2b33af5acbfd7
 I
 src/pages/manage/Star.tsx,3\2\329ee9b72a679b9a1eda43f812256b85bab0c17f
-?
-craco.config.js,d\c\dc8684dd9b1371aee46724f40001122dc551e063
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 F
@@ -100,8 +87,6 @@ J
 src/pages/Home.module.scss,5\c\5c8552bcdc5f647aebff4228500a974f2d243d42
 D
 public/manifest.json,4\2\42e89cd2213b9d5dfae4f63522702c623170d792
-Y
-)src/pages/question/Edit/index.module.scss,5\d\5d92adada92a31e56eb64e3ae8a1a3d5a33ff2ab
 K
 src/hooks/useGetUserInfo.ts,3\a\3abb98101a78b3b0c8e4d36bc53718cdaef20211
 T
@@ -112,10 +97,6 @@ U
 %src/pages/question/Edit/LeftPanel.tsx,7\2\72c70a86d63802d49041f6c12cfc7ac8c3a33cee
 ^
 .src/pages/question/Edit/EditHeader.module.scss,b\3\b30a09d97a8ac11474b75304ca55a41e2e81cf04
-B
-src/store/index.ts,7\8\788f62f848ec0936ef56cb3abc11e629c69f787c
-H
-src/store/userReducer.ts,1\0\10424d9068b652d5b6fb7715143a1dc406d920d8
 V
 &src/pages/question/Edit/EditHeader.tsx,e\e\ee290b651147f93084d73c13266ac86e095cc2a1
 X
@@ -126,8 +107,6 @@ A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 <
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
-P
- src/hooks/useGetComponentInfo.ts,b\5\b5efc5202b31300ea8b039995ddb5a8d9c17210e
 T
 $src/store/componentsReducer/utils.ts,3\5\353d019f764f6c746dbfa7d24f6c318bd1d1ccf0
 R
@@ -146,11 +125,32 @@ W
 'src/pages/question/Edit/EditToolbar.tsx,a\f\af4c294bd83d5c66674db9a259d056296d11fc0d
 Q
 !src/pages/question/Edit/index.tsx,2\b\2b8e81d65512c2372571020918f5bde96909a197
-l
-<src/components/QuestionComponents/QuestionTitle/interface.ts,5\3\539b43b12b018c3b739b92694ae56a90016ac228
 h
 8src/components/QuestionComponents/QuestionTitle/index.ts,a\4\a4d5ee83d5af919295f39fc6c0185ae8f1251876
-q
-Asrc/components/QuestionComponents/QuestionTitle/PropComponent.tsx,6\b\6b404cf86f3403f13625e8511e0f1c71ca9cf83e
 Y
 )src/pages/question/Edit/ComponentProp.tsx,5\e\5e57a9644387925b7e1a384ee8c543c72f3b209b
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+H
+src/store/userReducer.ts,1\0\10424d9068b652d5b6fb7715143a1dc406d920d8
+B
+src/store/index.ts,7\8\788f62f848ec0936ef56cb3abc11e629c69f787c
+V
+&src/pages/question/Edit/EditCanvas.tsx,9\a\9a3212143cc8ffa541b3e9e3b8fcd18de5ca9195
+P
+ src/hooks/useGetComponentInfo.ts,b\5\b5efc5202b31300ea8b039995ddb5a8d9c17210e
+?
+craco.config.js,d\c\dc8684dd9b1371aee46724f40001122dc551e063
+D
+src/services/user.ts,d\2\d2c693d55917cd051972e71eb05d22cd01da7ba3
+D
+src/services/ajax.ts,1\b\1be89e79a1f94aab37f14f52d7d634313707c708
+P
+ src/hooks/useLoadQuestionData.ts,1\3\13e29ce942596ad362a285839d6a7ddb74b23212
+H
+src/services/question.ts,b\a\bad006f07b0952189ed87e1f3567ca990d459d51
+h
+8src/components/QuestionComponents/QuestionInput/index.ts,3\8\386c3e49d8c8f5ad8e86d5432ace83aa4aea2325
