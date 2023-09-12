@@ -117,8 +117,6 @@ D
 src/App.tsx,8\3\835da56f32df714aaed6285a5b7fc3a7807851e4
 =
 src/index.tsx,5\a\5ab44fe33ca96299f51ad4778a73e425b92bf439
-T
-$src/store/componentsReducer/index.ts,3\4\3402ae9111d8e96cb9379fff930ecf5c21123984
 V
 &src/pages/question/Edit/RightPanel.tsx,c\8\c85be199834ab6870c292e2784dcb1aa4c6df78a
 W
@@ -127,8 +125,6 @@ Q
 !src/pages/question/Edit/index.tsx,2\b\2b8e81d65512c2372571020918f5bde96909a197
 h
 8src/components/QuestionComponents/QuestionTitle/index.ts,a\4\a4d5ee83d5af919295f39fc6c0185ae8f1251876
-Y
-)src/pages/question/Edit/ComponentProp.tsx,5\e\5e57a9644387925b7e1a384ee8c543c72f3b209b
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 :

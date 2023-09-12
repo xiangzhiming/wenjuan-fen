@@ -3,6 +3,7 @@ import {OptionType, QuestionRadioPopsType} from "./interface";
 import {Select, Form, Input, Space, Button} from 'antd';
 import Checkbox from "antd/es/checkbox/Checkbox";
 import {MinusCircleOutlined, PlusOutlined} from "@ant-design/icons";
+import {nanoid} from "@reduxjs/toolkit";
 
 export const PropComponent: FC<QuestionRadioPopsType> = (props: QuestionRadioPopsType) => {
     const {title, isVertical, value, options, onChange, disabled} = props;
@@ -12,9 +13,19 @@ export const PropComponent: FC<QuestionRadioPopsType> = (props: QuestionRadioPop
     }, [title, value, options, isVertical])
 
     function handleValuesChange() {
-        if (onChange) {
-
+        if (onChange == null) return;
+        // 触发 onChange 函数
+        const newValues = form.getFieldsValue() as QuestionRadioPopsType;
+        if (newValues.options) {
+            // 需要清除 text为undefined的选项
+            newValues.options = newValues.options.filter(opt => !(opt.text == null))
         }
+        const {options = []} = newValues;
+        options.forEach((opt) => {
+            if (opt.value) return;
+            opt.value = nanoid(5);
+        })
+        onChange(newValues);
     }
 
     return (<div>
@@ -34,11 +45,11 @@ export const PropComponent: FC<QuestionRadioPopsType> = (props: QuestionRadioPop
                                 <Form.Item name={[name, "text"]} rules={[
                                     {required: true, message: "请输入选项文字"},
                                     {
-                                        validator: (_,text) => {
+                                        validator: (_, text) => {
                                             const {options = []} = form.getFieldsValue();
 
                                             let num = 0;
-                                            options.forEach( (opt: OptionType)  => {
+                                            options.forEach((opt: OptionType) => {
                                                 if (opt.text === text) num++;  // 记录text相同的个数，预期只有1个，自己
                                             })
                                             if (num === 1) return Promise.resolve();
@@ -55,7 +66,7 @@ export const PropComponent: FC<QuestionRadioPopsType> = (props: QuestionRadioPop
                         {/*添加选项按钮*/}
                         <Form.Item>
                             <Button type={"link"} onClick={() => add({text: "", value: ""})}
-                            icon={<PlusOutlined/>} block>
+                                    icon={<PlusOutlined/>} block>
                                 添加选项
                             </Button>
                         </Form.Item>
