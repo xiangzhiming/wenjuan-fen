@@ -1,8 +1,9 @@
 import {FC, useEffect} from "react";
 import {QuestionInputPropsType} from "./interface";
 import {Form, Input} from "antd";
+import {QuestionTextareaPropsType} from "../QuestionTextarea";
 
-export const PropComponent:FC<QuestionInputPropsType> = (props:QuestionInputPropsType) => {
+export function InputAndTextarea(props: QuestionInputPropsType & QuestionTextareaPropsType) {
     const [form] = Form.useForm();
     const {title,placeholder,onChange,disabled} = props;
 
@@ -15,7 +16,6 @@ export const PropComponent:FC<QuestionInputPropsType> = (props:QuestionInputProp
             onChange(form.getFieldsValue());
         }
     }
-
     return (
         <Form onValuesChange={handleValueChange} layout={"vertical"} initialValues={{title,placeholder}}
               disabled = {disabled} form={form}>
@@ -27,4 +27,8 @@ export const PropComponent:FC<QuestionInputPropsType> = (props:QuestionInputProp
             </Form.Item>
         </Form>
     )
+}
+
+export const PropComponent:FC<QuestionInputPropsType> = (props:QuestionInputPropsType) => {
+    return InputAndTextarea(props)
 }

@@ -1,9 +1,10 @@
 import {FC, useEffect} from "react";
 import {QuestionTextareaPropsType} from "./interface";
 import {Form, Input} from "antd";
+import {InputAndTextarea} from "../QuestionInput/PropComponent";
 
 export const PropComponent:FC<QuestionTextareaPropsType> = (props:QuestionTextareaPropsType) => {
-    const [form] = Form.useForm();
+    /*const [form] = Form.useForm();
     const {title,placeholder,onChange,disabled} = props;
 
     useEffect(() => {
@@ -26,5 +27,6 @@ export const PropComponent:FC<QuestionTextareaPropsType> = (props:QuestionTextar
                 <Input/>
             </Form.Item>
         </Form>
-    )
+    )*/
+    return InputAndTextarea(props)
 }
