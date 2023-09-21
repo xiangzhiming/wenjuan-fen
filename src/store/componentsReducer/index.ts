@@ -158,6 +158,7 @@ export const componentsSlice = createSlice({
             }
         ),
 
+        // 拖动排序组件顺序
         moveComponent: produce((draft: ComponentsStateType,
                                 action: PayloadAction<{ oldIndex: number, newIndex: number }>) => {
             const {componentList: curComponentList} = draft;
