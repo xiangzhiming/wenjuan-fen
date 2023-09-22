@@ -1,16 +1,22 @@
 import {ChangeEvent, FC, useState} from "react";
 import styles from "./EditHeader.module.scss";
 import {Button, Input, Space} from "antd";
-import {EditOutlined, LeftOutlined} from "@ant-design/icons";
-import {useNavigate} from "react-router-dom";
+import {EditOutlined, LeftOutlined, LoadingOutlined} from "@ant-design/icons";
+import {useNavigate, useParams} from "react-router-dom";
 import Title from "antd/es/typography/Title";
 import {EditToolbar} from "./EditToolbar";
 import useGetPageInfo from "../../../hooks/useGetPageInfo";
 import {useDispatch} from "react-redux";
 import {changePageTitle} from "../../../store/pageInfoReducer";
+import useGetComponentInfo from "../../../hooks/useGetComponentInfo";
+import {useKeyPress, useRequest} from "ahooks";
+import {updateQuestionService} from "../../../services/question";
 
-
-const TitleElem:FC = () => {
+/**
+ * 显示和修改标题
+ * @constructor
+ */
+const TitleElem: FC = () => {
     const {title} = useGetPageInfo();
     const [editState, setEditState] = useState(false);
 
@@ -23,25 +29,50 @@ const TitleElem:FC = () => {
     }
 
     if (editState) {
-        return <Input value = {title} onChange={handleChange} onPressEnter={()=>setEditState(false)}
-                      onBlur={()=>setEditState(false)}/>
+        return <Input value={title} onChange={handleChange} onPressEnter={() => setEditState(false)}
+                      onBlur={() => setEditState(false)}/>
     }
 
-    return(<Space>
+    return (<Space>
         <Title>
             {title}
         </Title>
-        <Button icon={<EditOutlined/>} type={"text"} onClick={()=>setEditState(true)}/>
+        <Button icon={<EditOutlined/>} type={"text"} onClick={() => setEditState(true)}/>
     </Space>);
+}
+
+/**
+ * 保存按钮
+ * @constructor
+ */
+const SaveButton: FC = () => {
+    const {id} = useParams();
+    const {componentList = []} = useGetComponentInfo();
+    const pageInfo = useGetPageInfo();
+    const {loading, run: save} = useRequest(async () => {
+            if (!id) return;
+            await updateQuestionService(id, {componentList, pageInfo});
+        },
+        {
+            manual: true
+        });
+    useKeyPress(["ctrl.s","meta.s"], (event) => {
+        event.preventDefault();
+        if (!loading) save();
+
+    })
+    return (<Button disabled={loading} onClick={save} icon={loading ? <LoadingOutlined/> : null}>
+        保存
+    </Button>)
 }
 
 /**
  * 编辑器头部
  * @constructor
  */
-export const EditHeader:FC = () => {
+export const EditHeader: FC = () => {
     const nav = useNavigate()
-    return(<div className={styles["header-wrappe"]}>
+    return (<div className={styles["header-wrappe"]}>
         <div className={styles.header}>
             <div className={styles.left}>
                 <Space>
@@ -54,7 +85,7 @@ export const EditHeader:FC = () => {
             </div>
             <div className={styles.right}>
                 <Space>
-                    <Button>保存</Button>
+                    <SaveButton/>
                     <Button type={"primary"}>发布</Button>
                 </Space>
             </div>

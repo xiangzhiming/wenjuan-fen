@@ -3,7 +3,7 @@ import {ComponentsStateType} from "../store/componentsReducer";
 import {useSelector} from "react-redux";
 
 /**
- * 返回当前选中组件的State
+ * 返回画布中组件的集合、组件的state和props
  */
 function useGetComponentInfo() {
     const components = useSelector<StateType>(state => state.components) as ComponentsStateType;

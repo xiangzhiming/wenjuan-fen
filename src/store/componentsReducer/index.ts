@@ -15,8 +15,11 @@ export type ComponentInfoType = {
 }
 
 export type ComponentsStateType = {
-    selectId: string;   // 选中组件的ID
-    componentList: ComponentInfoType[];  //  后端返回的组件集合
+    // 选中组件的ID
+    selectId: string;
+    //  后端返回的组件集合
+    componentList: ComponentInfoType[];
+    //  复制的组件
     copiedComponent: ComponentInfoType | null
 };
 
