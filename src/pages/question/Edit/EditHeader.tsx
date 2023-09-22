@@ -1,4 +1,4 @@
-import {ChangeEvent, FC, useState} from "react";
+import {ChangeEvent, FC, useEffect, useState} from "react";
 import styles from "./EditHeader.module.scss";
 import {Button, Input, Space} from "antd";
 import {EditOutlined, LeftOutlined, LoadingOutlined} from "@ant-design/icons";
@@ -9,7 +9,7 @@ import useGetPageInfo from "../../../hooks/useGetPageInfo";
 import {useDispatch} from "react-redux";
 import {changePageTitle} from "../../../store/pageInfoReducer";
 import useGetComponentInfo from "../../../hooks/useGetComponentInfo";
-import {useKeyPress, useRequest} from "ahooks";
+import {useDebounceEffect, useKeyPress, useRequest} from "ahooks";
 import {updateQuestionService} from "../../../services/question";
 
 /**
@@ -41,6 +41,7 @@ const TitleElem: FC = () => {
     </Space>);
 }
 
+
 /**
  * 保存按钮
  * @constructor
@@ -56,7 +57,19 @@ const SaveButton: FC = () => {
         {
             manual: true
         });
-    useKeyPress(["ctrl.s","meta.s"], (event) => {
+
+    /**
+     * 自动保存，（不是定期保存，不是定时器），监听我们需要保存的依赖项的变化，一秒钟后如果状态没有继续修改了再保存
+     * useDebounceEffect  表示监听到依赖的信息修改完毕，间隔一秒后再触发任务
+     */
+    useDebounceEffect(() => {
+            save();  //  任务
+        }, [componentList, pageInfo],   // 依赖项
+        {
+            wait: 1000,   // 毫秒值   表示一秒以后再触发任务
+        });
+
+    useKeyPress(["ctrl.s", "meta.s"], (event) => {
         event.preventDefault();
         if (!loading) save();
 
