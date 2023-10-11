@@ -1,13 +1,15 @@
-import {FC,MouseEvent} from "react";
+import {FC, MouseEvent} from "react";
 import styles from "./EditCanvas.module.scss"
 import Component from "../../../components/QuestionComponents/QuestionTitle/Component";
 import {Spin} from "antd";
 import classnames from "classnames";
 import useGetComponentInfo from "../../../hooks/useGetComponentInfo";
-import {changeSelectId, ComponentInfoType} from "../../../store/componentsReducer";
+import {changeSelectId, ComponentInfoType, moveComponent} from "../../../store/componentsReducer";
 import {getComponetConfByType} from "../../../components/QuestionComponents";
 import {useDispatch} from "react-redux";
 import useBindCanvasKeyPress from "../../../hooks/useBindCanvasKeyPress";
+import {SortableContainer} from "../../../components/DragSortable/SortableContainer";
+import {SortableItem} from "../../../components/DragSortable/SortableItem";
 
 export type propsType = {
     loading: boolean;
@@ -33,33 +35,44 @@ const EditCanvas: FC<propsType> = ({loading}) => {
         )
     }
 
-    function handleClick(event:MouseEvent,id: string) {
+    function handleClick(event: MouseEvent, id: string) {
         event.stopPropagation();   // 阻止事件冒泡
         dispatch(changeSelectId(id));
     }
 
+    // SortableContainer 组件的items属性，需要每个item都有id
+    const componentListWithId = componentList.map(c => ({...c, id: c.fe_id}))
+
+    // 拖拽排序结束
+    function handleDragEnd(oldIndex: number, newIndex: number) {
+        dispatch(moveComponent({oldIndex, newIndex}))
+    }
+
     return (
-        <div className={styles.canvas}>
-            {componentList
-                .filter(c => !c.isHidden)
-                .map(item => {
-                const {fe_id,isLocked} = item;
-                const wrapperDefaultClassName = styles["component-wrapper"];
-                const selectedClassName = styles.selected;
-                const lockedClassName = styles.locked;
-                const wrapperClassName = classnames({
-                    [wrapperDefaultClassName]: true,
-                    [selectedClassName]: fe_id === selectId,
-                    [lockedClassName]: isLocked
-                })
-                return (<div key={fe_id} className={wrapperClassName}
-                             onClick={(event) => handleClick(event,fe_id)}>
-                    <div className={styles.component}>{genComponent(item)}</div>
-                </div>);
-            })}
+        <SortableContainer items={componentListWithId} onDragEnd={handleDragEnd}>
+            <div className={styles.canvas}>
+                {componentList
+                    .filter(c => !c.isHidden)
+                    .map(item => {
+                        const {fe_id, isLocked} = item;
+                        const wrapperDefaultClassName = styles["component-wrapper"];
+                        const selectedClassName = styles.selected;
+                        const lockedClassName = styles.locked;
+                        const wrapperClassName = classnames({
+                            [wrapperDefaultClassName]: true,
+                            [selectedClassName]: fe_id === selectId,
+                            [lockedClassName]: isLocked
+                        })
+                        return (<SortableItem key={fe_id} id={fe_id}>
+                            <div className={wrapperClassName}
+                                 onClick={(event) => handleClick(event, fe_id)}>
+                                <div className={styles.component}>{genComponent(item)}</div>
+                            </div>
+                        </SortableItem>);
+                    })}
 
 
-            {/*<div className={styles["component-wrapper"]}>
+                {/*<div className={styles["component-wrapper"]}>
                 <div className={styles.component}>
                     <Component/>
                 </div>
@@ -69,7 +82,8 @@ const EditCanvas: FC<propsType> = ({loading}) => {
                     <QuestionInput/>
                 </div>
             </div>*/}
-        </div>
+            </div>
+        </SortableContainer>
     )
 }
 export default EditCanvas;

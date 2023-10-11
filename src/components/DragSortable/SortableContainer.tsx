@@ -14,7 +14,7 @@ export const SortableContainer: FC<PropsType> = (props: PropsType) => {
     const sensors = useSensors(
         useSensor(MouseSensor,{
             activationConstraint: {
-                distance: 8,   // 8px
+                distance: 8,   // 鼠标点击之后移动8px表示要移动组件
             }
         })
     )
