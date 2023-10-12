@@ -3,7 +3,7 @@ import {Button, Space, Tooltip} from "antd";
 import {
     BlockOutlined,
     CopyOutlined,
-    DeleteOutlined,
+    DeleteOutlined, DownOutlined,
     EyeInvisibleOutlined,
     LockOutlined,
     UpOutlined
@@ -59,6 +59,12 @@ export const EditToolbar: FC = () => {
         dispatch(moveComponent({oldIndex: selectedIndex, newIndex: selectedIndex - 1}))
     }
 
+    // 下移
+    function moveDown() {
+        if (isLast) return;
+        dispatch(moveComponent({oldIndex: selectedIndex, newIndex: selectedIndex + 1}))
+    }
+
     // TODO: 撤销/重做  上移/下移
 
     return (<Space>
@@ -82,6 +88,10 @@ export const EditToolbar: FC = () => {
         <Tooltip title={"上移"}>
             <Button shape={"circle"} icon={<UpOutlined/>} onClick={moveUp}
                     disabled={isFirst}/>
+        </Tooltip>
+        <Tooltip title={"下移"}>
+            <Button shape={"circle"} icon={<DownOutlined/>} onClick={moveDown}
+                    disabled={isLast}/>
         </Tooltip>
     </Space>)
 }
