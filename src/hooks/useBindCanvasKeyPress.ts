@@ -8,11 +8,18 @@ import {
 } from "../store/componentsReducer";
 
 
-
 // 判断activeElem 是否合法
 function isActiveElementValid() {
     const activeElem = document.activeElement;
-    if (activeElem === document.body) return true; // 光标没有focus 到 input
+
+    // 没有增加dnd-kit之前可以正常使用
+    // if (activeElem === document.body) return true; // 光标没有focus 到 input
+
+    // 增加dnd-kit之后
+    if (activeElem == document.body) return true;
+    // div[role="button:是一个查询器
+    if (activeElem?.matches('div[role="button"]')) return true;  // matches:匹配这个元素是不是符合某一个css查询器,
+
     return false;
 }
 
@@ -20,19 +27,19 @@ function isActiveElementValid() {
 function useBindCanvasKeyPress() {
     const dispatch = useDispatch();
     // 删除组件快捷键
-    useKeyPress(['backspace','delete'], () => {
+    useKeyPress(['backspace', 'delete'], () => {
         if (!isActiveElementValid()) return;
         dispatch(removeSelectedComponent());
     })
 
     // 复制快捷键
-    useKeyPress(['ctrl.c','meta.c'], () => {
+    useKeyPress(['ctrl.c', 'meta.c'], () => {
         if (!isActiveElementValid()) return;
         dispatch(copySelectedComponent());
     })
 
     // 粘贴快捷键
-    useKeyPress(['ctrl.v','meta.v'], () => {
+    useKeyPress(['ctrl.v', 'meta.v'], () => {
         if (!isActiveElementValid()) return;
         dispatch(pasteCopiedComponent());
     })
@@ -50,8 +57,6 @@ function useBindCanvasKeyPress() {
 
     // TODO: 撤销  重做
 }
-
-
 
 
 export default useBindCanvasKeyPress;
